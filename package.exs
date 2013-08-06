@@ -1,4 +1,4 @@
-Expm.Package.new(name: "Hex",
+Expm.Package.new(name: "hex",
                  description: "A simple module for encoding and decoding Hex strings in Elixir.",
                  version: "0.1.0", keywords: [], 
                  maintainers: [[name: "Rob Samson", 
