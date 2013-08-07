@@ -38,7 +38,9 @@ defmodule Hex do
       "This is a test."
   """
   def decode(hex_str) when is_binary(hex_str) do
-    list_to_binary(hex_str_to_list(binary_to_list(hex_str)))
+    binary_to_list(hex_str)
+    |> hex_str_to_list
+    |> list_to_binary
   end
 
   @doc """
@@ -54,7 +56,9 @@ defmodule Hex do
   end
 
   defp binary_to_hex(str) do
-    list_to_binary(list_to_hex(binary_to_list(str)))
+    binary_to_list(str)
+    |> list_to_hex
+    |> list_to_binary
   end
 
   defp hex_str_to_list([]) do
