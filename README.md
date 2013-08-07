@@ -3,27 +3,45 @@ A simple module for Hex encoding / decoding in Elixir
 
 ### Usage
 
-Encode binary:
+Encode to binary:
 ```elixir
 iex> Hex.encode("This is a test.")
      "54686973206973206120746573742e"
+
+iex> Hex.encode('This is a test.')
+     "54686973206973206120746573742e"
+
+iex> Hex.encode(123456)
+     "1e240"
 ```
 
-Decode binary:
+Decode to binary:
 ```elixir
 iex> Hex.decode("54686973206973206120746573742e")
      "This is a test."
+
+iex> Hex.decode('54686973206973206120746573742e')
+     "This is a test."
 ```
 
-Encode list:
+Encode to list:
 ```elixir
-iex> Hex.encode('This is a test.')
+iex> Hex.encode_to_list('This is a test.')
      '54686973206973206120746573742e'
+
+iex> Hex.encode_to_list("This is a test.")
+     '54686973206973206120746573742e'
+
+iex> Hex.encode(123456)
+     '1e240'
 ```
 
-Decode list:
+Decode to list:
 ```elixir
 iex> Hex.decode('54686973206973206120746573742e')
+     'This is a test.'
+
+iex> Hex.decode("54686973206973206120746573742e")
      'This is a test.'
 ```
 
