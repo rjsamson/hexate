@@ -6,36 +6,36 @@ defmodule Hex do
   """
 
   @doc """
-  Returns a Hex encoded binary String
+  Returns a hex encoded string from an string in either list
+  or binary form.
 
   ## Examples
 
       iex> Hex.encode("This is a test.")
       "54686973206973206120746573742e"
+
+      iex> Hex.encode('This is a test.')
+      '54686973206973206120746573742e'
   """
   def encode(str) when is_binary(str) do
     binary_to_hex(str)
   end
 
-  @doc """
-  Returns a Hex encoded list
-
-  ## Examples
-
-      iex> Hex.encode('This is a test.')
-      '54686973206973206120746573742e'
-  """
   def encode(str) when is_list(str) do
     list_to_hex(str)
   end
 
   @doc """
-  Returns a decoded binary String from a hex binary String
+  Returns a decoded string from a hex string in either list
+  or binary form.
 
   ## Examples
 
       iex> Hex.decode("54686973206973206120746573742e")
       "This is a test."
+
+      iex> Hex.decode('54686973206973206120746573742e')
+      'This is a test.'
   """
   def decode(hex_str) when is_binary(hex_str) do
     binary_to_list(hex_str)
@@ -43,16 +43,28 @@ defmodule Hex do
     |> list_to_binary
   end
 
+  def decode(hex_str) when is_list(hex_str) do
+    hex_str_to_list(hex_str)
+  end
+
   @doc """
-  Returns a decoded binary String from a hex binary String
+  Returns an integer representation of a given string of hex,
+  taking a list or a binary as an argument.
 
   ## Examples
 
-      iex> Hex.decode('54686973206973206120746573742e')
-      'This is a test.'
+      iex> Hex.to_integer('54686973206973206120746573742e')
+      438270661302729020147902120434299950
+
+      iex> Hex.to_integer("54686973206973206120746573742e")
+      438270661302729020147902120434299950
   """
-  def decode(hex_str) when is_list(hex_str) do
-    hex_str_to_list(hex_str)
+  def to_integer(hex_str) when is_list(hex_str) do
+    list_to_integer(hex_str, 16)
+  end
+
+  def to_integer(hex_str) when is_binary(hex_str) do
+    binary_to_integer(hex_str, 16)
   end
 
   defp binary_to_hex(str) do
