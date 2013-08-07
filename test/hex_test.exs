@@ -20,4 +20,12 @@ defmodule HexTest do
   test "decodes a list from hex" do
     assert Hex.decode('54686973206973206120746573742e') == 'This is a test.'
   end
+
+  test "converts hex list to an integer" do
+    assert Hex.to_integer('54686973206973206120746573742e') == 438270661302729020147902120434299950
+  end
+
+  test "converts hex binary to an integer" do
+    assert Hex.to_integer("54686973206973206120746573742e") == 438270661302729020147902120434299950
+  end
 end
