@@ -4,7 +4,7 @@ defmodule Hex.Mixfile do
   def project do
     [ app: :hex,
       version: "0.3.0",
-      elixir: "~> 0.11.2",
+      elixir: "~> 0.12.0",
       deps: deps ]
   end
 
