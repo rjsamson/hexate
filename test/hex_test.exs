@@ -33,8 +33,8 @@ defmodule HexTest do
     assert Hex.decode_to_list('54686973206973206120746573742e') == 'This is a test.'
   end
 
- test "decodes to a binary from a hex list" do
-    assert Hex.decode_to_list('54686973206973206120746573742e') == "This is a test."
+ test "decodes to a list from a hex binary" do
+    assert Hex.decode_to_list("54686973206973206120746573742e") == 'This is a test.'
   end
 
   test "converts hex list to an integer" do
