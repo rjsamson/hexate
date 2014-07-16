@@ -21,12 +21,12 @@ defmodule Hex do
   """
   def encode(str) when is_binary(str) do
     binary_to_hex_list(str)
-    |> iolist_to_binary
+    |> to_string
   end
 
   def encode(str) when is_list(str) do
     list_to_hex(str)
-    |> iolist_to_binary
+    |> to_string
   end
 
   def encode(int) when is_integer(int) do
@@ -76,12 +76,12 @@ defmodule Hex do
   def decode(hex_str) when is_binary(hex_str) do
     :binary.bin_to_list(hex_str)
     |> hex_str_to_list
-    |> iolist_to_binary
+    |> to_string
   end
 
   def decode(hex_str) when is_list(hex_str) do
     hex_str_to_list(hex_str)
-    |> iolist_to_binary
+    |> to_string
   end
 
   @doc """
