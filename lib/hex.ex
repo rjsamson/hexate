@@ -21,16 +21,16 @@ defmodule Hex do
   """
   def encode(str) when is_binary(str) do
     binary_to_hex_list(str)
-    |> iolist_to_binary
+    |> to_string
   end
 
   def encode(str) when is_list(str) do
     list_to_hex(str)
-    |> iolist_to_binary
+    |> to_string
   end
 
   def encode(int) when is_integer(int) do
-    integer_to_binary(int, 16)
+    Integer.to_string(int, 16)
     |> String.downcase
   end
 
@@ -57,7 +57,7 @@ defmodule Hex do
   end
 
   def encode_to_list(int) when is_integer(int) do
-    integer_to_list(int, 16)
+    Integer.to_char_list(int, 16)
     |> :string.to_lower
   end
 
@@ -76,12 +76,12 @@ defmodule Hex do
   def decode(hex_str) when is_binary(hex_str) do
     :binary.bin_to_list(hex_str)
     |> hex_str_to_list
-    |> iolist_to_binary
+    |> to_string
   end
 
   def decode(hex_str) when is_list(hex_str) do
     hex_str_to_list(hex_str)
-    |> iolist_to_binary
+    |> to_string
   end
 
   @doc """
@@ -118,11 +118,11 @@ defmodule Hex do
       438270661302729020147902120434299950
   """
   def to_integer(hex_str) when is_list(hex_str) do
-    list_to_integer(hex_str, 16)
+    List.to_integer(hex_str, 16)
   end
 
   def to_integer(hex_str) when is_binary(hex_str) do
-    binary_to_integer(hex_str, 16)
+    String.to_integer(hex_str, 16)
   end
 
   defp binary_to_hex_list(str) do
