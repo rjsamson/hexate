@@ -18,6 +18,9 @@ defmodule Hex do
 
       iex> Hex.encode(123456)
       "1e240"
+
+      iex> Hex.encode(15, 4)
+      "000f"
   """
   def encode(str) when is_binary(str) do
     binary_to_hex_list(str)
@@ -32,6 +35,12 @@ defmodule Hex do
   def encode(int) when is_integer(int) do
     Integer.to_string(int, 16)
     |> String.downcase
+  end
+
+  def encode(int, digits) when is_integer(int) do
+    Integer.to_string(int, 16)
+    |> String.downcase
+    |> String.rjust(digits, ?0)
   end
 
   @doc """

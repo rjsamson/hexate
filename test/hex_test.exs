@@ -5,6 +5,10 @@ defmodule HexTest do
 
   doctest Hex
 
+  test "encodes an integer to hex string with padding" do
+    assert Hex.encode(15, 4) == "000f"
+  end
+
   test "encodes a binary to a hex binary" do
     assert Hex.encode("This is a test.") == "54686973206973206120746573742e"
   end
