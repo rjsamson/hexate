@@ -13,6 +13,9 @@ iex> Hex.encode('This is a test.')
 
 iex> Hex.encode(123456)
      "1e240"
+
+iex> Hex.encode(15, 4)
+     "000f"
 ```
 
 Decode to binary:
