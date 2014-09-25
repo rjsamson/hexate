@@ -21,26 +21,33 @@ defmodule Hex do
 
       iex> Hex.encode(15, 4)
       "000f"
+
+      iex> Hex.encode(15.0, 2)
+      "0f"
+
+      iex> Hex.encode(15.0)
+      "f"
   """
-  def encode(str) when is_binary(str) do
-    binary_to_hex_list(str)
-    |> IO.iodata_to_binary
-  end
-
-  def encode(str) when is_list(str) do
-    list_to_hex(str)
-    |> IO.iodata_to_binary
-  end
-
-  def encode(int) when is_integer(int) do
-    Integer.to_string(int, 16)
-    |> String.downcase
-  end
+  def encode(int, digits \\ 1)
 
   def encode(int, digits) when is_integer(int) do
     Integer.to_string(int, 16)
     |> String.downcase
     |> String.rjust(digits, ?0)
+  end
+
+  def encode(float, digits) when is_float(float) do
+    encode(round(float), digits)
+  end
+
+  def encode(str, _digits) when is_binary(str) do
+    binary_to_hex_list(str)
+    |> IO.iodata_to_binary
+  end
+
+  def encode(str, _digits) when is_list(str) do
+    list_to_hex(str)
+    |> IO.iodata_to_binary
   end
 
   @doc """
