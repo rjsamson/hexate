@@ -43,6 +43,7 @@ iex> Hex.encode_to_list("This is a test.")
 
 iex> Hex.encode_to_list(123456)
      '1e240'
+
 ```
 
 Decode to list:
