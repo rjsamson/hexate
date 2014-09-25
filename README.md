@@ -3,7 +3,7 @@ A simple module for Hex encoding / decoding in Elixir
 
 ### Usage
 
-Encode to binary:
+Encode to binary string:
 ```elixir
 iex> Hex.encode("This is a test.")
      "54686973206973206120746573742e"
@@ -16,9 +16,15 @@ iex> Hex.encode(123456)
 
 iex> Hex.encode(15, 4)
      "000f"
+
+iex> Hex.encode(15.0, 2)
+     "0f"
+
+iex> Hex.encode(15.0)
+     "f"
 ```
 
-Decode to binary:
+Decode to binary string:
 ```elixir
 iex> Hex.decode("54686973206973206120746573742e")
      "This is a test."
