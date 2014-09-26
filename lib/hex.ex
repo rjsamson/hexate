@@ -1,4 +1,4 @@
-defmodule Hex do
+defmodule Hexate do
   @moduledoc """
   A simple module to convert to and from hex encoded strings.
 
@@ -10,22 +10,22 @@ defmodule Hex do
 
   ## Examples
 
-      iex> Hex.encode("This is a test.")
+      iex> Hexate.encode("This is a test.")
       "54686973206973206120746573742e"
 
-      iex> Hex.encode('This is a test.')
+      iex> Hexate.encode('This is a test.')
       "54686973206973206120746573742e"
 
-      iex> Hex.encode(123456)
+      iex> Hexate.encode(123456)
       "1e240"
 
-      iex> Hex.encode(15, 4)
+      iex> Hexate.encode(15, 4)
       "000f"
 
-      iex> Hex.encode(15.0, 2)
+      iex> Hexate.encode(15.0, 2)
       "0f"
 
-      iex> Hex.encode(15.0)
+      iex> Hexate.encode(15.0)
       "f"
   """
   def encode(int, digits \\ 1)
@@ -55,13 +55,13 @@ defmodule Hex do
 
   ## Examples
 
-      iex> Hex.encode_to_list("This is a test.")
+      iex> Hexate.encode_to_list("This is a test.")
       '54686973206973206120746573742e'
 
-      iex> Hex.encode_to_list('This is a test.')
+      iex> Hexate.encode_to_list('This is a test.')
       '54686973206973206120746573742e'
 
-      iex> Hex.encode_to_list(123456)
+      iex> Hexate.encode_to_list(123456)
       '1e240'
   """
   def encode_to_list(str) when is_binary(str) do
@@ -83,10 +83,10 @@ defmodule Hex do
 
   ## Examples
 
-      iex> Hex.decode("54686973206973206120746573742e")
+      iex> Hexate.decode("54686973206973206120746573742e")
       "This is a test."
 
-      iex> Hex.decode('54686973206973206120746573742e')
+      iex> Hexate.decode('54686973206973206120746573742e')
       "This is a test."
   """
   def decode(hex_str) when is_binary(hex_str) do
@@ -106,10 +106,10 @@ defmodule Hex do
 
   ## Examples
 
-      iex> Hex.decode_to_list("54686973206973206120746573742e")
+      iex> Hexate.decode_to_list("54686973206973206120746573742e")
       'This is a test.'
 
-      iex> Hex.decode_to_list('54686973206973206120746573742e')
+      iex> Hexate.decode_to_list('54686973206973206120746573742e')
       'This is a test.'
   """
   def decode_to_list(hex_str) when is_binary(hex_str) do
@@ -127,10 +127,10 @@ defmodule Hex do
 
   ## Examples
 
-      iex> Hex.to_integer('54686973206973206120746573742e')
+      iex> Hexate.to_integer('54686973206973206120746573742e')
       438270661302729020147902120434299950
 
-      iex> Hex.to_integer("54686973206973206120746573742e")
+      iex> Hexate.to_integer("54686973206973206120746573742e")
       438270661302729020147902120434299950
   """
   def to_integer(hex_str) when is_list(hex_str) do
