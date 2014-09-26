@@ -41,16 +41,17 @@ iex> Hex.encode_to_list('This is a test.')
 iex> Hex.encode_to_list("This is a test.")
      '54686973206973206120746573742e'
 
-iex> Hex.encode(123456)
+iex> Hex.encode_to_list(123456)
      '1e240'
+
 ```
 
 Decode to list:
 ```elixir
-iex> Hex.decode('54686973206973206120746573742e')
+iex> Hex.decode_to_list('54686973206973206120746573742e')
      'This is a test.'
 
-iex> Hex.decode("54686973206973206120746573742e")
+iex> Hex.decode_to_list("54686973206973206120746573742e")
      'This is a test.'
 ```
 
