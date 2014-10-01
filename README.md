@@ -1,7 +1,28 @@
 # Hexate
-A simple module for hexadecimal encoding / decoding in Elixir
 
-### Usage
+A simple module for hexadecimal encoding / decoding in Elixir.
+
+## Note: name change from `hex` to `hexate`
+
+Now that Elixir includes integration with Hex.pm, the library has been
+renamed `hexate` to avoid namespace clashes.
+
+This was manifesting itself with intermittent failures when running test
+suites. If you experience this, update your deps!
+
+If you really *must* use the old version, it's on the branch `pre-rename-to-hexate`.
+
+## Adding to your `mix.exs`
+
+```elixir
+defp deps do
+  [
+    {:hexate,  ">= 0.5.0"}
+  ]
+end
+```
+
+## Usage
 
 Encode to binary string:
 ```elixir
@@ -63,3 +84,14 @@ iex> Hexate.to_integer('54686973206973206120746573742e')
 iex> Hexate.to_integer("54686973206973206120746573742e")
      438270661302729020147902120434299950
 ```
+
+## Contributing
+
+* Fork this repo
+* Make a feature branch
+* Issue a pull request
+
+## Authors
+
+[Robert J Samson](https://github.com/rjsamson)
+[David Parry](https://github.com/suranyami)
