@@ -5,4 +5,4 @@ Expm.Package.new(name: "hexate",
     [name: "Rob Samson",  email: "rjsamson@me.com"]
     [name: "David Parry", email: "david.parry@suranyami.com"]
   ],
-  repositories: [[github: "suranyami/hexate"]])
+  repositories: [[github: "rjsamson/hexate"]])
