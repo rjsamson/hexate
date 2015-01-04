@@ -22,7 +22,7 @@ defmodule Hexate.Mixfile do
       contributors: ["Rob Samson", "David Parry"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/rjsamson/hexate",
-              "Docs" => "https://github.com/rjsamson/hexate"}
+              "Docs" => "http://hexdocs.pm/hexate/0.5.0/"}
     ]
   end
 
