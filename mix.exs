@@ -31,6 +31,7 @@ defmodule Hexate.Mixfile do
   end
 
   defp deps do
-    []
+    [{:earmark, "~> 0.1", only: :dev},
+     {:ex_doc, "~> 0.6", only: :dev}]
   end
 end
