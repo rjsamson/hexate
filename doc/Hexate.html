@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hexate</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">hexate v0.5.0 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hexate.html">Hexate</a></div>
+      <h1>
+        Hexate
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>A simple module to convert to and from hex encoded strings.</p>
+<p>Encodes / decodes both lists and binaries.</p>
+
+        </section>
+      
+
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#decode/1">decode(hex_str)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a decoded binary from a hex string in either list
+or binary form</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#decode_to_list/1">decode_to_list(hex_str)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a decoded list from a hex string in either list
+or binary form</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#encode/2">encode(int, digits \\ 1)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a hex encoded binary from a list, binary or integer</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#encode_to_list/1">encode_to_list(str)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a hex encoded list from a list, binary or integer</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#to_integer/1">to_integer(hex_str)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns an integer representation of a given string of hex,
+taking a list or a binary as an argument</p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="decode/1">
+    <span class="signature"><strong>decode(hex_str)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#decode/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Returns a decoded binary from a hex string in either list
+or binary form.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Hexate.decode(&quot;54686973206973206120746573742e&quot;)
+&quot;This is a test.&quot;
+
+iex&gt; Hexate.decode('54686973206973206120746573742e')
+&quot;This is a test.&quot;</code></pre>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="decode_to_list/1">
+    <span class="signature"><strong>decode_to_list(hex_str)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#decode_to_list/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Returns a decoded list from a hex string in either list
+or binary form.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Hexate.decode_to_list(&quot;54686973206973206120746573742e&quot;)
+'This is a test.'
+
+iex&gt; Hexate.decode_to_list('54686973206973206120746573742e')
+'This is a test.'</code></pre>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="encode/2">
+    <span class="signature"><strong>encode(int, digits \\ 1)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#encode/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Returns a hex encoded binary from a list, binary or integer.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Hexate.encode(&quot;This is a test.&quot;)
+&quot;54686973206973206120746573742e&quot;
+
+iex&gt; Hexate.encode('This is a test.')
+&quot;54686973206973206120746573742e&quot;
+
+iex&gt; Hexate.encode(123456)
+&quot;1e240&quot;
+
+iex&gt; Hexate.encode(15, 4)
+&quot;000f&quot;
+
+iex&gt; Hexate.encode(15.0, 2)
+&quot;0f&quot;
+
+iex&gt; Hexate.encode(15.0)
+&quot;f&quot;</code></pre>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="encode_to_list/1">
+    <span class="signature"><strong>encode_to_list(str)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#encode_to_list/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Returns a hex encoded list from a list, binary or integer.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Hexate.encode_to_list(&quot;This is a test.&quot;)
+'54686973206973206120746573742e'
+
+iex&gt; Hexate.encode_to_list('This is a test.')
+'54686973206973206120746573742e'
+
+iex&gt; Hexate.encode_to_list(123456)
+'1e240'</code></pre>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="to_integer/1">
+    <span class="signature"><strong>to_integer(hex_str)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#to_integer/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Returns an integer representation of a given string of hex,
+taking a list or a binary as an argument.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Hexate.to_integer('54686973206973206120746573742e')
+438270661302729020147902120434299950
+
+iex&gt; Hexate.to_integer(&quot;54686973206973206120746573742e&quot;)
+438270661302729020147902120434299950</code></pre>
+
+  </section>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>
