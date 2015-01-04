@@ -1,4 +1,7 @@
 # Changelog
+**0.5.1**
+* Add ex_doc docs
+* Version bump for hex.pm publishing
 
 **0.5.0**
 * Renamed repo because of possible namespace collision with Hex.pm.

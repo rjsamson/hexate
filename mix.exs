@@ -3,7 +3,7 @@ defmodule Hexate.Mixfile do
 
   def project do
     [ app: :hexate,
-      version: "0.5.0",
+      version: "0.5.1",
       elixir: ">= 0.15.1",
       description: description,
       package: package,
