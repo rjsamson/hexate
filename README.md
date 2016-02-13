@@ -1,5 +1,7 @@
 # Hexate
 
+[![Build Status](https://travis-ci.org/rjsamson/hexate.svg?branch=master)](https://travis-ci.org/rjsamson/hexate)
+
 A simple module for hexadecimal encoding / decoding in Elixir.
 
 ## Note: name change from `hex` to `hexate`
