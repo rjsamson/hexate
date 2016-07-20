@@ -2,11 +2,11 @@ defmodule Hexate do
   @moduledoc """
   A simple module to convert to and from hex encoded strings.
 
-  Encodes / decodes both lists and binaries.
+  Encodes / decodes both char-lists and strings.
   """
 
   @doc """
-  Returns a hex encoded binary from a list, binary or integer.
+  Returns a hex encoded string from a char-list, string or integer.
 
   ## Examples
 
@@ -51,7 +51,7 @@ defmodule Hexate do
   end
 
   @doc """
-  Returns a hex encoded list from a list, binary or integer.
+  Returns a hex encoded list from a char-list, string or integer.
 
   ## Examples
 
@@ -78,8 +78,8 @@ defmodule Hexate do
   end
 
   @doc """
-  Returns a decoded binary from a hex string in either list
-  or binary form.
+  Returns a decoded binary from a hex string in either char-list
+  or string form.
 
   ## Examples
 
@@ -101,8 +101,8 @@ defmodule Hexate do
   end
 
   @doc """
-  Returns a decoded list from a hex string in either list
-  or binary form.
+  Returns a decoded char-list from a hex string in either char-list
+  or string form.
 
   ## Examples
 
@@ -123,7 +123,7 @@ defmodule Hexate do
 
   @doc """
   Returns an integer representation of a given string of hex,
-  taking a list or a binary as an argument.
+  taking a char-list or a string as an argument.
 
   ## Examples
 
@@ -150,7 +150,7 @@ defmodule Hexate do
     []
   end
 
-  defp hex_str_to_list([x,y|tail]) do
+  defp hex_str_to_list([x, y | tail]) do
     [to_int(x) * 16 + to_int(y) | hex_str_to_list(tail)]
   end
 
@@ -158,7 +158,7 @@ defmodule Hexate do
     []
   end
 
-  defp list_to_hex([head|tail]) do
+  defp list_to_hex([head | tail]) do
     to_hex_str(head) ++ list_to_hex(tail)
   end
 
