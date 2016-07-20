@@ -1,4 +1,8 @@
 # Changelog
+**0.6.0**
+* Made more consistent use of terms 'char-list' and 'string (binary)'.
+* bumped elixir version to 1.0 or greater
+
 **0.5.1**
 * Add ex_doc docs
 * Version bump for hex.pm publishing
