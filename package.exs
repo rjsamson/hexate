@@ -1,6 +1,6 @@
 Expm.Package.new(name: "hexate",
   description: "A simple module for encoding and decoding hex strings in Elixir.",
-  version: "0.5.1", keywords: [],
+  version: "0.6.0", keywords: [],
   maintainers: [
     [name: "Rob Samson",  email: "rjsamson@me.com"]
     [name: "David Parry", email: "david.parry@suranyami.com"]
