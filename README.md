@@ -103,6 +103,13 @@ iex> Hexate.to_integer("54686973206973206120746573742e")
 * Make a feature branch
 * Issue a pull request
 
+## Running tests
+
+```bash
+mix deps.get
+mix test.watch
+```
+
 ## Authors
 
 [Robert J Samson](https://github.com/rjsamson)
