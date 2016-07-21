@@ -2,11 +2,11 @@ defmodule Hexate do
   @moduledoc """
   A simple module to convert to and from hex encoded strings.
 
-  Encodes / decodes both lists and binaries.
+  Encodes / decodes both char-lists and strings.
   """
 
   @doc """
-  Returns a hex encoded binary from a list, binary or integer.
+  Returns a hex encoded string from a char-list, string or integer.
 
   ## Examples
 
@@ -31,7 +31,8 @@ defmodule Hexate do
   def encode(int, digits \\ 1)
 
   def encode(int, digits) when is_integer(int) do
-    Integer.to_string(int, 16)
+    int
+    |> Integer.to_string(16)
     |> String.downcase
     |> String.rjust(digits, ?0)
   end
@@ -41,17 +42,19 @@ defmodule Hexate do
   end
 
   def encode(str, _digits) when is_binary(str) do
-    binary_to_hex_list(str)
+    str
+    |> binary_to_hex_list
     |> IO.iodata_to_binary
   end
 
   def encode(str, _digits) when is_list(str) do
-    list_to_hex(str)
+    str
+    |> list_to_hex
     |> IO.iodata_to_binary
   end
 
   @doc """
-  Returns a hex encoded list from a list, binary or integer.
+  Returns a hex encoded list from a char-list, string or integer.
 
   ## Examples
 
@@ -73,13 +76,14 @@ defmodule Hexate do
   end
 
   def encode_to_list(int) when is_integer(int) do
-    Integer.to_char_list(int, 16)
+    int
+    |> Integer.to_char_list(16)
     |> :string.to_lower
   end
 
   @doc """
-  Returns a decoded binary from a hex string in either list
-  or binary form.
+  Returns a decoded binary from a hex string in either char-list
+  or string form.
 
   ## Examples
 
@@ -90,19 +94,21 @@ defmodule Hexate do
       "This is a test."
   """
   def decode(hex_str) when is_binary(hex_str) do
-    :binary.bin_to_list(hex_str)
+    hex_str
+    |> :binary.bin_to_list
     |> hex_str_to_list
     |> IO.iodata_to_binary
   end
 
   def decode(hex_str) when is_list(hex_str) do
-    hex_str_to_list(hex_str)
+    hex_str
+    |> hex_str_to_list
     |> IO.iodata_to_binary
   end
 
   @doc """
-  Returns a decoded list from a hex string in either list
-  or binary form.
+  Returns a decoded char-list from a hex string in either char-list
+  or string form.
 
   ## Examples
 
@@ -113,7 +119,8 @@ defmodule Hexate do
       'This is a test.'
   """
   def decode_to_list(hex_str) when is_binary(hex_str) do
-    :binary.bin_to_list(hex_str)
+    hex_str
+    |> :binary.bin_to_list
     |> hex_str_to_list
   end
 
@@ -123,7 +130,7 @@ defmodule Hexate do
 
   @doc """
   Returns an integer representation of a given string of hex,
-  taking a list or a binary as an argument.
+  taking a char-list or a string as an argument.
 
   ## Examples
 
@@ -142,7 +149,8 @@ defmodule Hexate do
   end
 
   defp binary_to_hex_list(str) do
-    :binary.bin_to_list(str)
+    str
+    |> :binary.bin_to_list
     |> list_to_hex
   end
 
@@ -150,7 +158,7 @@ defmodule Hexate do
     []
   end
 
-  defp hex_str_to_list([x,y|tail]) do
+  defp hex_str_to_list([x, y | tail]) do
     [to_int(x) * 16 + to_int(y) | hex_str_to_list(tail)]
   end
 
@@ -158,7 +166,7 @@ defmodule Hexate do
     []
   end
 
-  defp list_to_hex([head|tail]) do
+  defp list_to_hex([head | tail]) do
     to_hex_str(head) ++ list_to_hex(tail)
   end
 

@@ -19,18 +19,20 @@ If you really *must* use the old version, it's on the branch `pre-rename-to-hexa
 ```elixir
 defp deps do
   [
-    {:hexate,  ">= 0.5.0"}
+    {:hexate,  ">= 0.6.0"}
   ]
 end
 ```
 
 ## Usage
 
-Encode to binary string:
+Encode to string (binary):
 ```elixir
+# From a string
 iex> Hexate.encode("This is a test.")
      "54686973206973206120746573742e"
 
+# From a char-list
 iex> Hexate.encode('This is a test.')
      "54686973206973206120746573742e"
 
@@ -47,42 +49,50 @@ iex> Hexate.encode(15.0)
      "f"
 ```
 
-Decode to binary string:
+Decode to string (binary):
 ```elixir
+# From a hex string
 iex> Hexate.decode("54686973206973206120746573742e")
      "This is a test."
 
+# From a hex char-list
 iex> Hexate.decode('54686973206973206120746573742e')
      "This is a test."
 ```
 
-Encode to list:
+Encode to hex char-list:
 ```elixir
+# From a unicode char-list
 iex> Hexate.encode_to_list('This is a test.')
      '54686973206973206120746573742e'
 
+# From a unicode string
 iex> Hexate.encode_to_list("This is a test.")
      '54686973206973206120746573742e'
 
+# From an integer
 iex> Hexate.encode_to_list(123456)
      '1e240'
-
 ```
 
-Decode to list:
+Decode to unicode char-list:
 ```elixir
+# From a hex char-list
 iex> Hexate.decode_to_list('54686973206973206120746573742e')
      'This is a test.'
 
+# From a hex string
 iex> Hexate.decode_to_list("54686973206973206120746573742e")
      'This is a test.'
 ```
 
-Convert hexate to integer:
+Convert hex to integer:
 ```elixir
+# From hex char-list
 iex> Hexate.to_integer('54686973206973206120746573742e')
      438270661302729020147902120434299950
 
+# From hex string
 iex> Hexate.to_integer("54686973206973206120746573742e")
      438270661302729020147902120434299950
 ```
@@ -92,6 +102,13 @@ iex> Hexate.to_integer("54686973206973206120746573742e")
 * Fork this repo
 * Make a feature branch
 * Issue a pull request
+
+## Running tests
+
+```bash
+mix deps.get
+mix test.watch
+```
 
 ## Authors
 
