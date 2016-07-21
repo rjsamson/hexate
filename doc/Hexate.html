@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.11.4">
-    <title>Hexate – hexate v0.5.1</title>
+    <title>Hexate – hexate v0.6.0</title>
     <link rel="stylesheet" href="dist/app-1e374caa3d.css" />
     <script src="dist/sidebar_items.js"></script>
   </head>
@@ -27,7 +27,7 @@
         hexate
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.5.1
+        v0.6.0
       </h2>
     </div>
     
@@ -59,7 +59,7 @@
 
 
       <h1>
-        <small class="visible-xs">hexate v0.5.1</small>
+        <small class="visible-xs">hexate v0.6.0</small>
         Hexate
         
         
@@ -68,7 +68,7 @@
       
         <section id="moduledoc" class="docstring">
           <p>A simple module to convert to and from hex encoded strings.</p>
-<p>Encodes / decodes both lists and binaries.</p>
+<p>Encodes / decodes both char-lists and strings.</p>
 
         </section>
       
@@ -93,8 +93,8 @@
     <a href="#decode/1">decode(hex_str)</a>
   </div>
   
-    <div class="summary-synopsis"><p>Returns a decoded binary from a hex string in either list
-or binary form</p>
+    <div class="summary-synopsis"><p>Returns a decoded binary from a hex string in either char-list
+or string form</p>
 </div>
   
 </div>
@@ -103,8 +103,8 @@ or binary form</p>
     <a href="#decode_to_list/1">decode_to_list(hex_str)</a>
   </div>
   
-    <div class="summary-synopsis"><p>Returns a decoded list from a hex string in either list
-or binary form</p>
+    <div class="summary-synopsis"><p>Returns a decoded char-list from a hex string in either char-list
+or string form</p>
 </div>
   
 </div>
@@ -113,7 +113,7 @@ or binary form</p>
     <a href="#encode/2">encode(int, digits \\ 1)</a>
   </div>
   
-    <div class="summary-synopsis"><p>Returns a hex encoded binary from a list, binary or integer</p>
+    <div class="summary-synopsis"><p>Returns a hex encoded string from a char-list, string or integer</p>
 </div>
   
 </div>
@@ -122,7 +122,7 @@ or binary form</p>
     <a href="#encode_to_list/1">encode_to_list(str)</a>
   </div>
   
-    <div class="summary-synopsis"><p>Returns a hex encoded list from a list, binary or integer</p>
+    <div class="summary-synopsis"><p>Returns a hex encoded list from a char-list, string or integer</p>
 </div>
   
 </div>
@@ -132,7 +132,7 @@ or binary form</p>
   </div>
   
     <div class="summary-synopsis"><p>Returns an integer representation of a given string of hex,
-taking a list or a binary as an argument</p>
+taking a char-list or a string as an argument</p>
 </div>
   
 </div>
@@ -167,8 +167,8 @@ taking a list or a binary as an argument</p>
   </div>
   
   <section class="docstring">
-    <p>Returns a decoded binary from a hex string in either list
-or binary form.</p>
+    <p>Returns a decoded binary from a hex string in either char-list
+or string form.</p>
 <h2>Examples</h2>
 <pre><code class="iex elixir">iex&gt; Hexate.decode(&quot;54686973206973206120746573742e&quot;)
 &quot;This is a test.&quot;
@@ -188,8 +188,8 @@ iex&gt; Hexate.decode(&#39;54686973206973206120746573742e&#39;)
   </div>
   
   <section class="docstring">
-    <p>Returns a decoded list from a hex string in either list
-or binary form.</p>
+    <p>Returns a decoded char-list from a hex string in either char-list
+or string form.</p>
 <h2>Examples</h2>
 <pre><code class="iex elixir">iex&gt; Hexate.decode_to_list(&quot;54686973206973206120746573742e&quot;)
 &#39;This is a test.&#39;
@@ -209,7 +209,7 @@ iex&gt; Hexate.decode_to_list(&#39;54686973206973206120746573742e&#39;)
   </div>
   
   <section class="docstring">
-    <p>Returns a hex encoded binary from a list, binary or integer.</p>
+    <p>Returns a hex encoded string from a char-list, string or integer.</p>
 <h2>Examples</h2>
 <pre><code class="iex elixir">iex&gt; Hexate.encode(&quot;This is a test.&quot;)
 &quot;54686973206973206120746573742e&quot;
@@ -241,7 +241,7 @@ iex&gt; Hexate.encode(15.0)
   </div>
   
   <section class="docstring">
-    <p>Returns a hex encoded list from a list, binary or integer.</p>
+    <p>Returns a hex encoded list from a char-list, string or integer.</p>
 <h2>Examples</h2>
 <pre><code class="iex elixir">iex&gt; Hexate.encode_to_list(&quot;This is a test.&quot;)
 &#39;54686973206973206120746573742e&#39;
@@ -265,7 +265,7 @@ iex&gt; Hexate.encode_to_list(123456)
   
   <section class="docstring">
     <p>Returns an integer representation of a given string of hex,
-taking a list or a binary as an argument.</p>
+taking a char-list or a string as an argument.</p>
 <h2>Examples</h2>
 <pre><code class="iex elixir">iex&gt; Hexate.to_integer(&#39;54686973206973206120746573742e&#39;)
 438270661302729020147902120434299950
