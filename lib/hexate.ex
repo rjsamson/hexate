@@ -31,7 +31,8 @@ defmodule Hexate do
   def encode(int, digits \\ 1)
 
   def encode(int, digits) when is_integer(int) do
-    Integer.to_string(int, 16)
+    int
+    |> Integer.to_string(16)
     |> String.downcase
     |> String.rjust(digits, ?0)
   end
@@ -41,12 +42,14 @@ defmodule Hexate do
   end
 
   def encode(str, _digits) when is_binary(str) do
-    binary_to_hex_list(str)
+    str
+    |> binary_to_hex_list
     |> IO.iodata_to_binary
   end
 
   def encode(str, _digits) when is_list(str) do
-    list_to_hex(str)
+    str
+    |> list_to_hex
     |> IO.iodata_to_binary
   end
 
@@ -73,7 +76,8 @@ defmodule Hexate do
   end
 
   def encode_to_list(int) when is_integer(int) do
-    Integer.to_char_list(int, 16)
+    int
+    |> Integer.to_char_list(16)
     |> :string.to_lower
   end
 
@@ -90,13 +94,15 @@ defmodule Hexate do
       "This is a test."
   """
   def decode(hex_str) when is_binary(hex_str) do
-    :binary.bin_to_list(hex_str)
+    hex_str
+    |> :binary.bin_to_list
     |> hex_str_to_list
     |> IO.iodata_to_binary
   end
 
   def decode(hex_str) when is_list(hex_str) do
-    hex_str_to_list(hex_str)
+    hex_str
+    |> hex_str_to_list
     |> IO.iodata_to_binary
   end
 
@@ -113,7 +119,8 @@ defmodule Hexate do
       'This is a test.'
   """
   def decode_to_list(hex_str) when is_binary(hex_str) do
-    :binary.bin_to_list(hex_str)
+    hex_str
+    |> :binary.bin_to_list
     |> hex_str_to_list
   end
 
@@ -142,7 +149,8 @@ defmodule Hexate do
   end
 
   defp binary_to_hex_list(str) do
-    :binary.bin_to_list(str)
+    str
+    |> :binary.bin_to_list
     |> list_to_hex
   end
 
