@@ -1,4 +1,6 @@
 # Changelog
+**0.6.1**
+* Relaxed the Elixir version to be `>= 1.2.0` rather than `~> 1.3` since we're not using anything 1.3-specific. Discovered this while trying to do some work a Raspberry Pi, which still only has 1.2 available at the moment.
 **0.6.0**
 * Made more consistent use of terms 'char-list' and 'string (binary)'.
 * bumped elixir version to 1.0 or greater

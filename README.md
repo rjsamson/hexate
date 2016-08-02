@@ -19,7 +19,7 @@ If you really *must* use the old version, it's on the branch `pre-rename-to-hexa
 ```elixir
 defp deps do
   [
-    {:hexate,  ">= 0.6.0"}
+    {:hexate,  ">= 0.6.1"}
   ]
 end
 ```
