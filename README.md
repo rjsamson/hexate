@@ -1,5 +1,6 @@
 # Hexate
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e7a92eb6b2ed495f833e2672c7b26927)](https://www.codacy.com/app/suranyami/hexate_2?utm_source=github.com&utm_medium=referral&utm_content=rjsamson/hexate&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/rjsamson/hexate.svg?branch=master)](https://travis-ci.org/rjsamson/hexate) [![Hex.pm](https://img.shields.io/hexpm/v/hexate.svg)]() [![Hex.pm](https://img.shields.io/hexpm/dt/hexate.svg)]()
 
 A simple module for hexadecimal encoding / decoding in Elixir.
@@ -19,7 +20,7 @@ If you really *must* use the old version, it's on the branch `pre-rename-to-hexa
 ```elixir
 defp deps do
   [
-    {:hexate,  ">= 0.6.1"}
+    {:hexate,  ">= 0.6.0"}
   ]
 end
 ```
