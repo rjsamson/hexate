@@ -34,7 +34,7 @@ defmodule Hexate do
     int
     |> Integer.to_string(16)
     |> String.downcase
-    |> String.pad_leading(digits, ?0)
+    |> String.pad_leading(digits, "0")
   end
 
   def encode(float, digits) when is_float(float) do
