@@ -1,6 +1,6 @@
 # Hexate
 
-[![Build Status](https://travis-ci.org/rjsamson/hexate.svg?branch=master)](https://travis-ci.org/rjsamson/hexate) [![Hex.pm](https://img.shields.io/hexpm/v/hexate.svg)]() [![Hex.pm](https://img.shields.io/hexpm/dt/hexate.svg)]()
+[![Build Status](https://travis-ci.org/rjsamson/hexate.svg?branch=master)](https://travis-ci.org/rjsamson/hexate) [![Hex.pm](https://img.shields.io/hexpm/v/hexate.svg)](https://hex.pm/packages/hexate) [![Hex.pm](https://img.shields.io/hexpm/dt/hexate.svg)]()
 
 A simple module for hexadecimal encoding / decoding in Elixir.
 
